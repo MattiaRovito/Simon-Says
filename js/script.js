@@ -8,17 +8,27 @@
 
 
 
+//* Generiamo un alert con 5 numeri casuali univoci
+var generatorePC = [];
+
+while(generatorePC.length < 5){
+    var random = Math.floor(Math.random() * 100) + 1;
+    if(generatorePC.indexOf(random) === -1) generatorePC.push(random);
+}
+alert(generatorePC);
 
 
 
 
+//* Impostiamo il setTimeout che fa partire 5 prompt dopo 30 secondi dal click dell'alert.
 
+setTimeout(numeri, 30000);
 
-
-
-
-
-
+function numeri(){
+    for (var i = 0; i < 5; i++){
+        parseInt(prompt('Inserire il numero visto precedentemente!'));
+    }
+}
 
 
 
