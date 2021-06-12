@@ -15,18 +15,29 @@ while(generatorePC.length < 5){
     var random = Math.floor(Math.random() * 100) + 1;
     if(generatorePC.indexOf(random) === -1) generatorePC.push(random);
 }
-alert(generatorePC);
+alert('Ricorda bene questi numeri: ' + generatorePC);
 
 
 
 
 //* Impostiamo il setTimeout che fa partire 5 prompt dopo 30 secondi dal click dell'alert.
 
+var numeriUtente;
+var arrayUtente = [];
+
 setTimeout(numeri, 30000);
 
 function numeri(){
     for (var i = 0; i < 5; i++){
-        parseInt(prompt('Inserire il numero visto precedentemente!'));
+        var numeriUtente= parseInt(prompt('Inserire i numeri visti precedentemente!'));
+
+        if (generatorePC.includes(numeriUtente)){
+            arrayUtente.push(numeriUtente);
+            document.getElementById('vincenti').innerHTML = 'I numeri ' + numeriUtente + ' sono giusti!';
+        }  else{
+            document.getElementById('perdenti').innerHTML = 'I numeri ' + numeriUtente + ' non sono giusti!';
+        }
+        document.getElementById('totale').innerHTML = 'I numeri indovinati sono... ' + arrayUtente.length;
     }
 }
 
