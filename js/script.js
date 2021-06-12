@@ -16,6 +16,7 @@ while(generatorePC.length < 5){
     if(generatorePC.indexOf(random) === -1) generatorePC.push(random);
 }
 alert('Ricorda bene questi numeri: ' + generatorePC);
+alert('Ora attendi 30 secondi, dopodiché ti verranno chiesti i numeri appena visualizzati')
 
 
 
